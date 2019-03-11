@@ -11,12 +11,10 @@ public class ReactiveService {
 		System.out.println("Initial students average mark");
 		studentObservable.forEach(s -> System.out.println(s.getAverageGrade()));
 		Observable<Student> studentsAboveAverage = studentObservable.filter(s -> s.getAverageGrade() > 5);
-
 		System.out.println("Students average mark");
 		studentsAboveAverage.subscribe(s -> System.out.println(s.getAverageGrade()));
 
 		return studentsAboveAverage;
-
 	}
 
 	public Observable<Student> makeAllPass(final List<Student> studentList) {
